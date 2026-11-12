@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ post.titulo }} · Mi Blog{% endblock %}
+
+{% block content %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'blog:post_list' %}">Posts</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ post.titulo }}</li>
+    </ol>
+</nav>
+
+<article class="bg-white p-4 p-lg-5 rounded shadow-sm">
+    <h1 class="mb-3">{{ post.titulo }}</h1>
+    <p class="text-muted">
+        <i class="bi bi-person"></i> {{ post.autor.username }}
+        · <i class="bi bi-calendar3"></i> {{ post.creado|date:"d M Y H:i" }}
+        · <i class="bi bi-eye"></i> {{ post.total_visitas }} visita{{ post.total_visitas|pluralize }}
+    </p>
+
+    {% if post.imagen %}
+        <img src="{{ post.imagen.url }}" class="img-fluid rounded mb-4" alt="{{ post.titulo }}">
+    {% endif %}
+
+    <p class="lead">{{ post.resumen }}</p>
+    <hr>
+    <div class="post-content">{{ post.contenido }}</div>
+</article>
+
+<div class="mt-4 d-flex gap-2">
+    <a href="{% url 'blog:post_list' %}" class="btn btn-outline-secondary">
+        <i class="bi bi-arrow-left"></i> Volver a los posts
+    </a>
+    <a href="{% url 'blog:popular_posts' %}" class="btn btn-outline-primary">
+        <i class="bi bi-fire"></i> Ver populares
+    </a>
+</div>
+{% endblock %}

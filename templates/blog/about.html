@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}About · Mi Blog{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="bg-white p-4 p-lg-5 rounded shadow-sm">
+            <h1 class="mb-4"><i class="bi bi-info-circle"></i> Acerca de este blog</h1>
+            <p class="lead">
+                Bienvenido a <strong>Mi Blog</strong>, un espacio para compartir ideas, tutoriales y
+                experiencias sobre desarrollo de software y tecnología.
+            </p>
+            <p>
+                Aquí puedes explorar todos los artículos publicados, consultar los más leídos y
+                publicar tus propios posts si has iniciado sesión.
+            </p>
+            <hr>
+            <h2 class="h4">¿Qué encontrarás?</h2>
+            <ul>
+                <li><strong>Posts:</strong> todos los artículos ordenados por fecha.</li>
+                <li><strong>Populares:</strong> los posts con más visitas, para no perderte lo mejor.</li>
+                <li><strong>Nuevo post:</strong> crea contenido desde el sitio con tu cuenta.</li>
+            </ul>
+            <p class="mb-0">Gracias por visitarnos.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
