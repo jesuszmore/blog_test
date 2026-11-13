@@ -6,3 +6,4 @@ media/
 .env
 ./staticfiles
 .env.prod
+staticfiles/
